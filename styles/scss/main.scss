@@ -513,7 +513,7 @@ a {
 
 .color-wipes-animate {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   left:0;
   position: fixed;
   top:100%;
@@ -530,21 +530,21 @@ a {
 }
 
 .color-wipe:nth-child(1) {
-  background-color: #011627;
+  background-color: rgb(27, 28, 33);
 }
 
 .color-wipe:nth-child(2) {
-  background-color: #FF3366;
+  background-color: rgb(35, 34, 41);
 }
 
-.color-wipe:nth-child(3) {
-  background-color: #2EC4B6;
-}
-
-.color-wipe:nth-child(4) {
-  background-color: #17A8A8;
-}
-
-.color-wipe:nth-child(5) {
-  background-color: #20A4F3;
+//.color-wipe:nth-child(3) {
+//  background-color: rgb(24, 23, 28);
+//}
+//
+//.color-wipe:nth-child(4) {
+//  background-color: rgb(16, 16, 20);
+//}
+//
+//.color-wipe:nth-child(5) {
+//  background-color: rgb(5, 5, 6);
 }

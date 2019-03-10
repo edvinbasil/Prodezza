@@ -387,7 +387,7 @@ a {
 
 .color-wipes-animate {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   left: 0;
   position: fixed;
   top: 100%;
@@ -404,23 +404,23 @@ a {
 }
 
 .color-wipe:nth-child(1) {
-  background-color: #011627;
+  background-color: #1b1c21;
 }
 
 .color-wipe:nth-child(2) {
-  background-color: #FF3366;
+  background-color: #232229;
 }
 
 .color-wipe:nth-child(3) {
-  background-color: #2EC4B6;
+  background-color: #18171c;
 }
 
 .color-wipe:nth-child(4) {
-  background-color: #17A8A8;
+  background-color: #101014;
 }
 
 .color-wipe:nth-child(5) {
-  background-color: #20A4F3;
+  background-color: #050506;
 }
 
 /*# sourceMappingURL=main.css.map */
