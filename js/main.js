@@ -1,5 +1,67 @@
-(function() {
-    Barba.Pjax.start();
+Barba.Pjax.start();
+var transitionAnimation = Barba.BaseTransition.extend({
+    start: function () {
+        /**
+         * This function is automatically called as soon the Transition starts
+         * this.newContainerLoading is a Promise for the loading of the new container
+         * (Barba.js also comes with an handy Promise polyfill!)
+         */
+
+        // As soon the loading is finished and the old page is faded out, let's fade the new page
+        Promise
+            .all([this.newContainerLoading, this.startTransition()])
+            .then(this.fadeIn.bind(this));
+    },
+
+    startTransition: function () {
+        var transitionPromise = new Promise(function (resolve) {
+            var outTransition = new TimelineMax();
+            outTransition
+                .to('.sliders-container', 0.3, {y: -50, autoAlpha: 0})
+                .set('.color-wipe', {display: "block", y: "100%"})
+                .staggerFromTo('.color-wipe', 0.3, {y: "100%"}, {y: "-100%", ease: Expo.easeOut}, 0.1)
+                .staggerFromTo('.color-wipe', 0.3, {y: "-100%"}, {
+                    y: "-200%", ease: Expo.easeOut, onComplete: function () {
+                        resolve()
+                    }
+                }, 0.1)
+                .set('.color-wipe',{display: "none"})
+        })
+        return transitionPromise
+    },
+
+    fadeIn: function () {
+        /**
+         * this.newContainer is the HTMLElement of the new Container
+         * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+         * Please note, newContainer is available just after newContainerLoading is resolved!
+         */
+        render()
+        var _this = this;
+        var $el = $(this.newContainer);
+
+        TweenMax.set($(this.oldContainer), {display: "none"})
+        TweenMax.fromTo('.sliders-container', 1.5, {autoAlpha: 0, y: 30}, {y: 0, autoAlpha: 1})
+        TweenMax.to($el,0.1,{opacity: 1, onComplete: function(){_this.done()}})
+
+    }
+});
+
+/**
+ * Next step, you have to tell Barba to use the new Transition
+ */
+
+Barba.Pjax.getTransition = function () {
+    /**
+     * Here you can use your own logic!
+     * For example you can use different Transition based on the current page or link...
+     */
+
+    return transitionAnimation;
+};
+
+
+function render() {
 
     var slidersContainer = document.querySelector('.sliders-container');
 
@@ -23,7 +85,7 @@
         'Abhishek Bhaskar',
         'Murray Mulhoy',
         'Mentalist Kannan R',
-        'Annie Amie'
+        'Anne Amie'
     ];
     var pages = [
         '1.html',
@@ -36,7 +98,7 @@
         cssClass: 'ms--titles',
         range: [0, 3],
         rangeContent: function (i) {
-            return '<h3>'+ titles[i] +'</h3>';
+            return '<h3>' + titles[i] + '</h3>';
         },
         vertical: true,
         reverse: true,
@@ -52,7 +114,7 @@
         cssClass: 'ms--links',
         range: [0, 3],
         rangeContent: function (i) {
-            return '<a href="'+ pages[i] + '" class="ms-slide__link">Show Details</a>';
+            return '<a href="' + pages[i] + '" class="ms-slide__link">Show Details</a>';
         },
         vertical: true,
         interactive: false
@@ -82,7 +144,7 @@
             }
         },
         // Update pagination if slider change
-        change: function(newIndex, oldIndex) {
+        change: function (newIndex, oldIndex) {
             if (typeof oldIndex !== 'undefined') {
                 paginationItems[oldIndex].classList.remove('pagination__item--active');
             }
@@ -91,11 +153,11 @@
     });
 
     // Select corresponding slider item when a pagination button is clicked
-    pagination.addEventListener('click', function(e) {
+    pagination.addEventListener('click', function (e) {
         if (e.target.matches('.pagination__button')) {
             var index = paginationItems.indexOf(e.target.parentNode);
             msImages.select(index);
         }
     });
 
-})();
+};
