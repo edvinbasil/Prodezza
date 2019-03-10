@@ -1,4 +1,5 @@
 (function() {
+    Barba.Pjax.start();
 
     var slidersContainer = document.querySelector('.sliders-container');
 
