@@ -36,7 +36,11 @@ var transitionAnimation = Barba.BaseTransition.extend({
          * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
          * Please note, newContainer is available just after newContainerLoading is resolved!
          */
-        render()
+        if(window.location.pathname.indexOf('index.html') != -1) {
+            // console.log(window.location.pathname.indexOf('index.html'))
+            // console.log('Rendering now...')
+            render()
+        }
         var _this = this;
         var $el = $(this.newContainer);
 
