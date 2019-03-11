@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 .ms--images {
   position: relative;
   overflow: hidden;
@@ -391,6 +392,16 @@ a {
   transform: translate(-50%, -50%);
   z-index: 10;
   opacity: 0;
+}
+
+.prod-container {
+  max-width: 800px;
+}
+
+.prod-content p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.1em;
+  color: #b0b0b0;
 }
 
 .color-wipes-animate {

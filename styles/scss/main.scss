@@ -514,8 +514,15 @@ a {
   z-index: 10;
   opacity: 0;
 }
-
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+.prod-container{
+  max-width: 800px;
+}
+.prod-content  p{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.1em;
+  color: rgb(176, 176, 176);
+}
 
 .color-wipes-animate {
   display: grid;
