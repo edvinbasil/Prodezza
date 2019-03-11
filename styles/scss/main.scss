@@ -408,6 +408,7 @@ body {
   color: $color-primary;
   background-color: #1B1C21;
   overflow: hidden;
+  overflow-y: scroll;
 }
 
 a {
@@ -417,6 +418,7 @@ a {
 }
 
 .container {
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
