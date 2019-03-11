@@ -488,7 +488,13 @@ a {
   justify-content: center;
   flex: 1;
 }
-
+.new-slider-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
 
 // Hide header menu and footer in small screens
 
@@ -547,4 +553,4 @@ a {
 //
 //.color-wipe:nth-child(5) {
 //  background-color: rgb(5, 5, 6);
-}
+//}

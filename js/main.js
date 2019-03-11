@@ -17,15 +17,15 @@ var transitionAnimation = Barba.BaseTransition.extend({
         var transitionPromise = new Promise(function (resolve) {
             var outTransition = new TimelineMax();
             outTransition
-                .to('.sliders-container', 0.3, {y: -50, autoAlpha: 0})
+                .to('.new-slider-container', 0, {y: -50, autoAlpha: 0})
                 .set('.color-wipe', {display: "block", y: "100%"})
-                .staggerFromTo('.color-wipe', 0.3, {y: "100%"}, {y: "-100%", ease: Expo.easeOut}, 0.1)
+                .staggerFromTo('.color-wipe', .3, {y: "100%"}, {y: "-100%", ease: Expo.easeOut}, 0.1)
                 .staggerFromTo('.color-wipe', 0.3, {y: "-100%"}, {
                     y: "-200%", ease: Expo.easeOut, onComplete: function () {
                         resolve()
                     }
                 }, 0.1)
-                .set('.color-wipe',{display: "none"})
+                .set('.color-wipe', {display: "none"})
         })
         return transitionPromise
     },
@@ -41,8 +41,12 @@ var transitionAnimation = Barba.BaseTransition.extend({
         var $el = $(this.newContainer);
 
         TweenMax.set($(this.oldContainer), {display: "none"})
-        TweenMax.fromTo('.sliders-container', 1.5, {autoAlpha: 0, y: 30}, {y: 0, autoAlpha: 1})
-        TweenMax.to($el,0.1,{opacity: 1, onComplete: function(){_this.done()}})
+        TweenMax.fromTo('.new-slider-container', 1.5, {autoAlpha: 0, y: 30}, {y: 0, autoAlpha: 1})
+        TweenMax.to($el, 0.1, {
+            opacity: 1, onComplete: function () {
+                _this.done()
+            }
+        })
 
     }
 });
