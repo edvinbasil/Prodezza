@@ -19,7 +19,10 @@ var transitionAnimation = Barba.BaseTransition.extend({
             outTransition
                 .to('.new-slider-container', 0, {y: -50, autoAlpha: 0})
                 .set('.color-wipe', {display: "block", y: "100%"})
+                .set('#subloader',{display: "block", autoAlpha: 0})
                 .staggerFromTo('.color-wipe', .3, {y: "100%"}, {y: "-100%", ease: Expo.easeOut}, 0.1)
+                .to('#subloader',.5,{autoAlpha: 1},"-=0.2")
+                .to('#subloader',.5,{autoAlpha: 0})
                 .staggerFromTo('.color-wipe', 0.3, {y: "-100%"}, {
                     y: "-200%", ease: Expo.easeOut, onComplete: function () {
                         resolve()
