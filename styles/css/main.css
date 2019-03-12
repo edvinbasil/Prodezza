@@ -156,6 +156,7 @@
   font-weight: 600;
 }
 .ms--titles .ms-slide h3 {
+  font-family: sans-serif;
   margin: 0;
   text-shadow: 1px 1px 2px black;
 }
@@ -327,6 +328,7 @@ a {
 
 .header__logo {
   font-size: 1.3em;
+  font-family: "Times New Roman", sans-serif;
   font-weight: 900;
   letter-spacing: -1px;
 }
@@ -398,6 +400,7 @@ a {
 
 .prod-container {
   max-width: 800px;
+  font-family: sans-serif;
 }
 
 .prod-content p {
