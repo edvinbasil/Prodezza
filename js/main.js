@@ -171,4 +171,19 @@ function render() {
         }
     });
 
+    // add arrow key listeners
+    document.addEventListener('keydown', (e) => {
+      if (e.key == "ArrowRight") {
+        msNumbers.next();
+        msLinks.next();
+        msImages.next();
+        msTitles.next();
+      } else if (e.key == "ArrowLeft") {
+        msNumbers.prev();
+        msLinks.prev();
+        msImages.prev();
+        msTitles.prev();
+      }
+    });
+
 };
