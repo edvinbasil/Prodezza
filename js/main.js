@@ -176,13 +176,13 @@ function render() {
       if (e.key == "ArrowRight") {
         msNumbers.next();
         msLinks.next();
-        msImages.next();
         msTitles.next();
+        msImages.next();
       } else if (e.key == "ArrowLeft") {
         msNumbers.prev();
         msLinks.prev();
-        msImages.prev();
         msTitles.prev();
+        msImages.prev();
       }
     });
 
