@@ -289,10 +289,11 @@
 
 body {
   color: white;
-  background-image: url('../../assets/images/prodezza.jpg');
-    background-size: cover;
+  background-color: #1B1C21;
   overflow: hidden;
   overflow-y: scroll;
+  background-image: url("../../assets/images/prodezza.jpg");
+  background-size: cover;
 }
 
 a {
@@ -382,9 +383,28 @@ a {
   flex: 1;
 }
 
+.back_btn_container {
+  display: none;
+  width: 100%;
+  justify-content: flex-end;
+  border-radius: 5px;
+  min-height: 40px;
+  align-items: center;
+}
+
+.back_btn {
+  font-size: 1.1em;
+  padding: 4px 5px 2px 0;
+  margin-right: 15px;
+}
+
 @media screen and (max-width: 860px) {
   .header__menu, .footer {
     display: none;
+  }
+
+  .back_btn_container {
+    display: flex;
   }
 }
 .loader {
@@ -402,7 +422,7 @@ a {
 .prod-container {
   max-width: 800px;
   font-family: sans-serif;
-    background-color: darkcyan;
+  background-color: darkcyan;
 }
 
 .prod-content p {

@@ -21,6 +21,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-left:before {
+  content: "\ea40";
+}
 .icon-facebook2:before {
   content: "\ea91";
 }
