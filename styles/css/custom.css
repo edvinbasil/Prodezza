@@ -1,0 +1,43 @@
+.ms-slide__image-container{
+        border: 20px solid transparent;
+    -webkit-border-image: url("../../assets/images/borderF.png") 30 round;
+         -o-border-image: url("../../assets/images/borderF.png") 30 round;
+            border-image: url("../../assets/images/borderF.png") 30 round;
+}
+
+.prod-container{
+            border: 20px solid transparent;
+    -webkit-border-image: url("../../assets/images/borderF.png") 30 round;
+         -o-border-image: url("../../assets/images/borderF.png") 30 round;
+            border-image: url("../../assets/images/borderF.png") 30 round;
+    padding: 20px;
+}
+
+.prod-title{
+    text-align: center;
+}
+
+#lights-div {
+    position: fixed;
+}
+
+
+@media (max-width: 600px) {
+    
+    .header{
+        display: none;
+    }
+    
+    .prod-container{
+        text-align: left;
+    }
+    
+    body{
+        background-image: url('../../assets/images/prodezza-mob.jpg');
+    }
+    
+    #light-left{
+            height: 290px;
+
+    }
+}

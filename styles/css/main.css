@@ -289,7 +289,8 @@
 
 body {
   color: white;
-  background-color: #1B1C21;
+  background-image: url('../../assets/images/prodezza.jpg');
+    background-size: cover;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -401,6 +402,7 @@ a {
 .prod-container {
   max-width: 800px;
   font-family: sans-serif;
+    background-color: darkcyan;
 }
 
 .prod-content p {
